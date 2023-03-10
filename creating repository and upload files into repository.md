@@ -1,30 +1,30 @@
-Creating a GitHub repository
+## Creating a GitHub repository
 
-    Log in to your GitHub account.
+1. Log in to your GitHub account.
 
-    Click on the "+" button in the top-right corner of the page.
+2. Click on the "+" button in the top-right corner of the page.
 
-    Select "New repository" from the dropdown menu.
+3. Select "New repository" from the dropdown menu.
 
-    Give your repository a name.
+4. Give your repository a name.
 
-    Add a description (optional).
+5. Add a description (optional).
 
-    Choose whether you want the repository to be public or private.
+6. Choose whether you want the repository to be public or private.
 
-    Initialize the repository with a README file (optional).
+7. Initialize the repository with a README file (optional).
 
-    Click on the "Create repository" button.
+8. Click on the "Create repository" button.
 
 Congratulations, you have now created a GitHub repository!
-Uploading files to the GitHub repository
+## Uploading files to the GitHub repository
 
-    Open the GitHub repository you just created.
+1. Open the GitHub repository you just created.
 
-    Click on the "Add file" button and select "Upload files" from the dropdown menu.
+2. Click on the "Add file" button and select "Upload files" from the dropdown menu.
 
-    Drag and drop the files you want to upload, or click on the "Choose your files" button to select the files from your computer.
+3. Drag and drop the files you want to upload, or click on the "Choose your files" button to select the files from your computer.
 
-    Once the files have been uploaded, enter a commit message describing the changes you made.
+4. Once the files have been uploaded, enter a commit message describing the changes you made.
 
-    Click on the "Commit changes" button.
+5. Click on the "Commit changes" button.
