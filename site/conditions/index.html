@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Conditional Statements - Android with Kotlin</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Android with Kotlin</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../dtypes/" class="nav-link">Data types</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Conditional Statements</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../collections/" class="nav-link">Collections</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../functions/" class="nav-link">Functions</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../oops/" class="nav-link">OOPS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../dtypes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../collections/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#ifelse-statements" class="nav-link">if/Else statements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#if-statement-with-multiple-cases" class="nav-link">If statement with multiple cases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ranges-in-ifelse-statments" class="nav-link">Ranges in if/else statments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#when-statement" class="nav-link">when statement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#for-loops" class="nav-link">for Loops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#for-loops-elements-and-indexes" class="nav-link">for loops: elements and indexes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#for-loops-step-sizes-and-ranges" class="nav-link">for loops: step sizes and ranges</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#while-loops" class="nav-link">while loops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#repeat-loops" class="nav-link">repeat loops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Kotiln features several ways to implement conditional logic:
+- if/Else statements
+- When statements
+- For Loops
+- While loops</p>
+<h1 id="ifelse-statements">if/Else statements</h1>
+<pre><code class="kotlin">val a = 10
+val b = 20
+
+if(a&gt;b){
+    println(&quot;a is great&quot;)
+} else {
+    println(&quot;b is great&quot;)
+}
+</code></pre>
+
+<p>Output: <code>b is great</code></p>
+<h2 id="if-statement-with-multiple-cases">If statement with multiple cases</h2>
+<pre><code>val books = 10
+if (books == 0){
+    println('No books')
+} else if (books &lt; 20){
+    println('few books')
+} else {
+    println(&quot;More books&quot;)
+}
+</code></pre>
+
+<p>Output: <code>few books</code></p>
+<h2 id="ranges-in-ifelse-statments">Ranges in if/else statments</h2>
+<ul>
+<li>Data types containing a span of comparable values (e.g. integers from 1 to 100 inclusive)</li>
+<li>Ranges are bounded</li>
+<li>Objects within a range can be mutable or immutable.</li>
+</ul>
+<pre><code class="kotlin">val numberOfEmployees = 50
+if (numberOfEmployees in 1..100) {
+    println(&quot;numberOfEmployees&quot;)
+}
+</code></pre>
+
+<p>Output: <code>50</code></p>
+<h2 id="when-statement">when statement</h2>
+<pre><code>when(results)
+    0 -&gt; println(&quot;No Results&quot;)
+    in 1..39 -&gt; println(&quot;Got Results&quot;)
+    else -&gt; println(&quot;That's a lot of results&quot;)
+</code></pre>
+
+<p>Output: <code>That's a lot of results</code></p>
+<p>Note: As well as a when statement, you can also define a <code>when</code> expression that provides a return value.</p>
+<h2 id="for-loops">for Loops</h2>
+<pre><code>val pets = arrayOf(&quot;dog&quot;,&quot;cat&quot;,&quot;rabbit&quot;)
+for (element in pets){
+    print(element + &quot; &quot;)
+}
+</code></pre>
+
+<p>Output: <code>dog cat rabbit</code></p>
+<p>You don't need to define an iterator variable and increment it for each pass.</p>
+<h2 id="for-loops-elements-and-indexes">for loops: elements and indexes</h2>
+<pre><code>for((index, element) in pets.withIndex()){
+    println(&quot;Item at $index is $element\n&quot;)
+}
+</code></pre>
+
+<p>Output: <code>Item at 0 is dog
+Item at 1 is cat
+Item at 2 is robbit</code></p>
+<h2 id="for-loops-step-sizes-and-ranges">for loops: step sizes and ranges</h2>
+<pre><code>for(i in 1..5) print(i)
+</code></pre>
+
+<p>Output: <code>12345</code></p>
+<p><code>for(i in 5 downTo 1) print(i)</code>
+Output: <code>54321</code></p>
+<p><code>for(i in 3..6 step 2) print(i)</code>
+Output: <code>35</code></p>
+<p><code>for(i in 'd'..'g') print(i)</code>
+Output: <code>defg</code></p>
+<h2 id="while-loops">while loops</h2>
+<pre><code>var chairs = 0
+while(chairs&lt;50){
+    chairs++
+}
+println(&quot;There are $chairs chairs available\n&quot;)
+</code></pre>
+
+<p>Output: <code>There are 50 chairs available</code></p>
+<pre><code>do {
+    chairs--
+} while(chairs&gt;50)
+println(&quot;$chairs chairs available&quot;)
+</code></pre>
+
+<p>Output: <code>49 chairs available</code></p>
+<h2 id="repeat-loops">repeat loops</h2>
+<pre><code>repeat(3){
+    print(&quot;Hey&quot;)
+}
+</code></pre>
+
+<p>Output: <code>HeyHeyHey</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

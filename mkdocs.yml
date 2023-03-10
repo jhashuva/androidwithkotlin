@@ -1,0 +1,9 @@
+site_name: Android with Kotlin
+
+nav:
+  - Home: index.md
+  - Data types: dtypes.md
+  - Conditional Statements: conditions.md
+  - Collections: collections.md
+  - Functions: functions.md
+  - OOPS: oops.md
